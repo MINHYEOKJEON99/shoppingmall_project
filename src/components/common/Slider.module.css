@@ -1,0 +1,17 @@
+.buttonDark {
+  background-color: #191d24;
+  color: #a6adbb;
+  border-color: #191d24;
+  transition: all;
+  transition-duration: 500ms;
+}
+
+@media screen and (max-width: 1024px) {
+  .mobileDiv {
+    height: 220px;
+  }
+
+  .textBox {
+    bottom: 20px;
+  }
+}

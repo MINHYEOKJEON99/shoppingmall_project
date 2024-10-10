@@ -1,0 +1,21 @@
+.link {
+  position: relative;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  bottom: 45px;
+  left: 0;
+  border-radius: 4px;
+  background-color: #1f2937;
+  color: #fff;
+  font-size: 14px;
+  padding: 4px 8px;
+  transform: translateX(-15px);
+  transition: all 500ms;
+}
+
+.link:hover > .tooltip {
+  display: block;
+}

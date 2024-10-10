@@ -1,0 +1,41 @@
+.searchbar {
+  background-color: #d1d5db;
+  border-radius: 4px;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: background-color border;
+  transition-duration: 500ms;
+}
+
+.darkSearchbar {
+  background-color: #4b5563;
+  border: 1px solid #4b5563;
+  transition: background-color border;
+  transition-duration: 100ms;
+}
+
+.searchbarForm {
+  position: relative;
+}
+
+.modal {
+  position: absolute;
+  background-color: #fff;
+  max-height: 360px;
+  width: 248px;
+  overflow-y: auto;
+}
+
+.listItem {
+  padding: 12px;
+  font-size: 16px;
+  color: rgb(31, 41, 55);
+  cursor: pointer;
+}
+
+.listItem:hover {
+  background-color: rgba(31, 41, 55, 0.1);
+  transition: background-color 300ms;
+}

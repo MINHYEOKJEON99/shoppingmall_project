@@ -1,0 +1,12 @@
+.dark {
+  background-color: #2a303c;
+}
+
+.section {
+  position: relative;
+  min-height: 100vh;
+}
+
+.main {
+  margin-bottom: 31px;
+}

@@ -1,0 +1,21 @@
+.priceContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.price {
+  color: #1f2937;
+  font-size: 24px;
+}
+.darkColor {
+  color: #a6adbb;
+}
+
+@media screen and (max-width: 1024px) {
+  .priceContainer {
+    justify-content: flex-start;
+  }
+}

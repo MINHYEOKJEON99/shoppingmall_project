@@ -1,0 +1,34 @@
+.title {
+  color: #1f2937;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.itemContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.dark {
+  color: #a6adbb;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .itemContainerMain {
+    overflow-x: auto;
+  }
+
+  .itemContainerCategory {
+    grid-template-columns: 1fr;
+  }
+}
