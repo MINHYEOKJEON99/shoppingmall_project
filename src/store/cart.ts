@@ -35,8 +35,7 @@ export const cartState = atom<ICartState>({
 });
 
 /**
- * cartList를 구현 하세요.
- * id, image, count 등을 return합니다.
+ * cartList
  */
 export const cartList = selector({
   key: "cartList",
@@ -46,7 +45,7 @@ export const cartList = selector({
   },
 });
 
-// addToCart는 구현 해보세요.
+// addToCart
 export const addFromCart = (cart: ICartState, id: number) => {
   const tempCart = { ...cart };
   if (!tempCart[id]) {
@@ -61,7 +60,7 @@ export const allDeleteFromCart = () => {
   return {};
 };
 
-// removeFromCart는 참고 하세요.
+// removeFromCart
 export const removeFromCart = (cart: ICartState, id: number) => {
   const tempCart = { ...cart };
   if (tempCart[id].count === 1) {
@@ -71,7 +70,3 @@ export const removeFromCart = (cart: ICartState, id: number) => {
     return { ...tempCart, [id]: { id: id, count: cart[id].count - 1 } };
   }
 };
-
-/**
- * 그 외에 화면을 참고하며 필요한 기능들을 구현 하세요.
- */
