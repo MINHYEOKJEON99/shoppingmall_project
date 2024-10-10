@@ -3,9 +3,10 @@ import { productsList } from "../../store/products";
 import styles from "./ItemList.module.css";
 import Item from "./Item";
 import clsx from "clsx";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../store/themeStore";
 import { Link, useLocation } from "react-router-dom";
+import ItemSkeleton from "./ItemSkeleton";
 
 interface Props {
   title: string;
@@ -22,6 +23,7 @@ export default function ItemList({ title, count }: Props): JSX.Element {
   const { pathname } = useLocation();
   const productList = useRecoilValue(productsList);
   const { lightTheme } = useContext(ThemeContext);
+  const [isLoading, setIsLoading] = useState(true);
 
   let containerStyle = pathname === "/" ? styles.itemContainerMain : styles.itemContainerCategory;
   let itemTitle = "패션";
@@ -44,13 +46,19 @@ export default function ItemList({ title, count }: Props): JSX.Element {
     ? productList.filter((item) => category[title]?.includes(item.category)).slice(0, count)
     : productList.filter((item) => category[title]?.includes(item.category));
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
   return (
     <>
       <h2 className={clsx(styles.title, { [styles.dark]: !lightTheme })}>{itemTitle}</h2>
       <div className={clsx(styles.itemContainer, containerStyle)}>
         {filterList.map((item) => (
           <Link to={`/product/${item.id}`} key={item.id}>
-            <Item image={item.image} itemTitle={item.title} price={item.price} />
+            {isLoading ? <ItemSkeleton /> : <Item image={item.image} itemTitle={item.title} price={item.price} />}
           </Link>
         ))}
       </div>
