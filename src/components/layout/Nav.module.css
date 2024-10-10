@@ -34,7 +34,13 @@ a {
 .main {
   font-weight: 700;
   font-size: 18px;
+  margin: 0 8px;
+}
 
+.modalMain {
+  display: none;
+  font-weight: 700;
+  font-size: 18px;
   margin: 0 8px;
 }
 
@@ -160,6 +166,12 @@ a {
   }
 }
 @media screen and (max-width: 768px) {
+  .main {
+    display: none;
+  }
+  .modalMain {
+    display: block;
+  }
   .hamburger {
     display: flex;
   }

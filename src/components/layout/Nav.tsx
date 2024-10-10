@@ -24,6 +24,11 @@ export default function Nav() {
   let modal = (
     <div className={styles.modalBackground} onClick={onClickVisible}>
       <div className={styles.modalContainer}>
+        <h1>
+          <Link to={"/"} className={styles.modalMain}>
+            React Shop
+          </Link>
+        </h1>
         <Link to={"/fashion"} className={styles.link}>
           패션
         </Link>
